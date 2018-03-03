@@ -24,7 +24,7 @@ class EmailControlXib: UIView {
         setupView()
     }
     
-    func setupView(){
+     func setupView(){
 //        let bundle = Bundle(for: type(of: self))
         Bundle.main.loadNibNamed("EmailControlXib", owner: self, options: nil)
         addSubview(emailControlXib)

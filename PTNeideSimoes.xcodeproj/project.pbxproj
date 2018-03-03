@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3511F30C204B337000396C20 /* EmailTextFieldNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511F30B204B337000396C20 /* EmailTextFieldNib.swift */; };
+		3511F30E204B450D00396C20 /* EmailTextFieldNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3511F30D204B450D00396C20 /* EmailTextFieldNib.xib */; };
 		354FF69D20461F380016EBF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FF69C20461F380016EBF1 /* AppDelegate.swift */; };
 		354FF69F20461F380016EBF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FF69E20461F380016EBF1 /* ViewController.swift */; };
 		354FF6A220461F380016EBF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 354FF6A020461F380016EBF1 /* Main.storyboard */; };
 		354FF6A420461F380016EBF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354FF6A320461F380016EBF1 /* Assets.xcassets */; };
 		354FF6A720461F380016EBF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 354FF6A520461F380016EBF1 /* LaunchScreen.storyboard */; };
 		354FF6B020461FFB0016EBF1 /* BorderUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FF6AF20461FFB0016EBF1 /* BorderUIButton.swift */; };
-		355488CD204AEB1900E8BC32 /* EmailContorlXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355488CC204AEB1900E8BC32 /* EmailContorlXib.xib */; };
-		355488CF204AEECD00E8BC32 /* EmailControlXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355488CE204AEECD00E8BC32 /* EmailControlXib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3511F30B204B337000396C20 /* EmailTextFieldNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldNib.swift; sourceTree = "<group>"; };
+		3511F30D204B450D00396C20 /* EmailTextFieldNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailTextFieldNib.xib; sourceTree = "<group>"; };
 		354FF69920461F380016EBF1 /* PTNeideSimoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTNeideSimoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		354FF69C20461F380016EBF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		354FF69E20461F380016EBF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,8 +28,6 @@
 		354FF6A620461F380016EBF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		354FF6A820461F380016EBF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		354FF6AF20461FFB0016EBF1 /* BorderUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderUIButton.swift; sourceTree = "<group>"; };
-		355488CC204AEB1900E8BC32 /* EmailContorlXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailContorlXib.xib; sourceTree = "<group>"; };
-		355488CE204AEECD00E8BC32 /* EmailControlXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailControlXib.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +83,8 @@
 		355488CB204AEA9400E8BC32 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				355488CC204AEB1900E8BC32 /* EmailContorlXib.xib */,
-				355488CE204AEECD00E8BC32 /* EmailControlXib.swift */,
+				3511F30D204B450D00396C20 /* EmailTextFieldNib.xib */,
+				3511F30B204B337000396C20 /* EmailTextFieldNib.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				355488CD204AEB1900E8BC32 /* EmailContorlXib.xib in Resources */,
+				3511F30E204B450D00396C20 /* EmailTextFieldNib.xib in Resources */,
 				354FF6A720461F380016EBF1 /* LaunchScreen.storyboard in Resources */,
 				354FF6A420461F380016EBF1 /* Assets.xcassets in Resources */,
 				354FF6A220461F380016EBF1 /* Main.storyboard in Resources */,
@@ -162,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				355488CF204AEECD00E8BC32 /* EmailControlXib.swift in Sources */,
+				3511F30C204B337000396C20 /* EmailTextFieldNib.swift in Sources */,
 				354FF69F20461F380016EBF1 /* ViewController.swift in Sources */,
 				354FF69D20461F380016EBF1 /* AppDelegate.swift in Sources */,
 				354FF6B020461FFB0016EBF1 /* BorderUIButton.swift in Sources */,
