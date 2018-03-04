@@ -1,8 +1,8 @@
 //
-//  EmailTextFieldNib.swift
+//  PhoneTextFieldNib.swift
 //  PTNeideSimoes
 //
-//  Created by Nuno Nunes on 03/03/2018.
+//  Created by Nuno Nunes on 04/03/2018.
 //  Copyright © 2018 Nuno Nunes. All rights reserved.
 //
 
@@ -10,10 +10,10 @@ import UIKit
 
 @IBDesignable
 
-class EmailTextFieldNib: UIControl {
-    
-    @IBOutlet var emailTextFieldNib: UIView!
-    @IBOutlet weak var emailTextField: UITextField!
+class PhoneTextFieldNib: UIControl {
+
+    @IBOutlet var phoneTextFieldNib: UIView!
+    @IBOutlet weak var phoneTextField: UITextField!
     
     var contentView: UIView?
     //@IBInspectable var nibName: String?
@@ -44,7 +44,7 @@ class EmailTextFieldNib: UIControl {
     
     func loadViewFromNib() -> UIView?{
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "EmailTextFieldNib", bundle: bundle)
+        let nib = UINib(nibName: "PhoneTextFieldNib", bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
@@ -53,11 +53,5 @@ class EmailTextFieldNib: UIControl {
         xibSetup()
         contentView?.prepareForInterfaceBuilder()
     }
-    
-    func isValidEmail(email: String) -> Bool{
-        return false
-    }
-    
-
 
 }

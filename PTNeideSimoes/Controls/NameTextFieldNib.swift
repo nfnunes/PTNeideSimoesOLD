@@ -1,8 +1,8 @@
 //
-//  EmailTextFieldNib.swift
+//  NameTextFieldNib.swift
 //  PTNeideSimoes
 //
-//  Created by Nuno Nunes on 03/03/2018.
+//  Created by Nuno Nunes on 04/03/2018.
 //  Copyright © 2018 Nuno Nunes. All rights reserved.
 //
 
@@ -10,10 +10,10 @@ import UIKit
 
 @IBDesignable
 
-class EmailTextFieldNib: UIControl {
-    
-    @IBOutlet var emailTextFieldNib: UIView!
-    @IBOutlet weak var emailTextField: UITextField!
+class NameTextFieldNib: UIControl {
+
+    @IBOutlet var nameTextFieldNib: UIView!
+    @IBOutlet weak var nameTextField: UITextField!
     
     var contentView: UIView?
     //@IBInspectable var nibName: String?
@@ -44,7 +44,7 @@ class EmailTextFieldNib: UIControl {
     
     func loadViewFromNib() -> UIView?{
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "EmailTextFieldNib", bundle: bundle)
+        let nib = UINib(nibName: "NameTextFieldNib", bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
@@ -54,10 +54,18 @@ class EmailTextFieldNib: UIControl {
         contentView?.prepareForInterfaceBuilder()
     }
     
-    func isValidEmail(email: String) -> Bool{
-        return false
-    }
-    
-
+//    public override var placeholder: String? {
+//        didSet {
+//            let placeholderStr = placeholder ?? ""
+//            attributedPlaceholder = NSAttributedString(string: placeholderStr, attributes: [NSForegroundColorAttributeName: placeholderColor])
+//        }
+//    }
+//
+//    @IBInspectable public var placeholderColor: UIColor = .red {
+//        didSet {
+//            let placeholderStr = placeholder ?? ""
+//            attributedPlaceholder = NSAttributedString(string: placeholderStr, attributes: [NSForegroundColorAttributeName: placeholderColor])
+//        }
+//    }
 
 }

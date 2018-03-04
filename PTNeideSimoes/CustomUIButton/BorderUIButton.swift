@@ -35,6 +35,8 @@ class BorderUIButton: UIButton {
         didSet{
             self.layer.borderColor = borderColor.cgColor
         }
+        
+        
     }
     
     

@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
-
+    @IBOutlet weak var emalTextFieldNib: EmailTextFieldNib!
+    @IBOutlet weak var loginBorderUIButton: BorderUIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +25,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func registerUIButtonPressed(_ sender: Any) {
+        
+        if let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController{
+            present(vc, animated: true, completion: nil)
+        }
+        
+    }
 }
 

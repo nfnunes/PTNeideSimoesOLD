@@ -9,9 +9,16 @@
 /* Begin PBXBuildFile section */
 		3511F30C204B337000396C20 /* EmailTextFieldNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3511F30B204B337000396C20 /* EmailTextFieldNib.swift */; };
 		3511F30E204B450D00396C20 /* EmailTextFieldNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3511F30D204B450D00396C20 /* EmailTextFieldNib.xib */; };
+		3513B747204B8B80000068AF /* PasswordTextFieldNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3513B746204B8B80000068AF /* PasswordTextFieldNib.xib */; };
+		3513B749204B8CAA000068AF /* PasswordTextFieldNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513B748204B8CAA000068AF /* PasswordTextFieldNib.swift */; };
+		35349EF1204C2C9900DFAEFC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35349EF0204C2C9900DFAEFC /* RegisterViewController.swift */; };
+		35349EF5204C321600DFAEFC /* NameTextFieldNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35349EF4204C321600DFAEFC /* NameTextFieldNib.swift */; };
+		35349EF7204C323000DFAEFC /* NameTextFieldNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35349EF6204C323000DFAEFC /* NameTextFieldNib.xib */; };
+		35349EF9204C4F1B00DFAEFC /* PhoneTextFieldNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35349EF8204C4F1B00DFAEFC /* PhoneTextFieldNib.xib */; };
+		35349EFB204C4F3800DFAEFC /* PhoneTextFieldNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35349EFA204C4F3800DFAEFC /* PhoneTextFieldNib.swift */; };
 		354FF69D20461F380016EBF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FF69C20461F380016EBF1 /* AppDelegate.swift */; };
-		354FF69F20461F380016EBF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FF69E20461F380016EBF1 /* ViewController.swift */; };
-		354FF6A220461F380016EBF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 354FF6A020461F380016EBF1 /* Main.storyboard */; };
+		354FF69F20461F380016EBF1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FF69E20461F380016EBF1 /* LoginViewController.swift */; };
+		354FF6A220461F380016EBF1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 354FF6A020461F380016EBF1 /* Login.storyboard */; };
 		354FF6A420461F380016EBF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354FF6A320461F380016EBF1 /* Assets.xcassets */; };
 		354FF6A720461F380016EBF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 354FF6A520461F380016EBF1 /* LaunchScreen.storyboard */; };
 		354FF6B020461FFB0016EBF1 /* BorderUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FF6AF20461FFB0016EBF1 /* BorderUIButton.swift */; };
@@ -20,10 +27,17 @@
 /* Begin PBXFileReference section */
 		3511F30B204B337000396C20 /* EmailTextFieldNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextFieldNib.swift; sourceTree = "<group>"; };
 		3511F30D204B450D00396C20 /* EmailTextFieldNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailTextFieldNib.xib; sourceTree = "<group>"; };
+		3513B746204B8B80000068AF /* PasswordTextFieldNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordTextFieldNib.xib; sourceTree = "<group>"; };
+		3513B748204B8CAA000068AF /* PasswordTextFieldNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldNib.swift; sourceTree = "<group>"; };
+		35349EF0204C2C9900DFAEFC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		35349EF4204C321600DFAEFC /* NameTextFieldNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldNib.swift; sourceTree = "<group>"; };
+		35349EF6204C323000DFAEFC /* NameTextFieldNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameTextFieldNib.xib; sourceTree = "<group>"; };
+		35349EF8204C4F1B00DFAEFC /* PhoneTextFieldNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextFieldNib.xib; sourceTree = "<group>"; };
+		35349EFA204C4F3800DFAEFC /* PhoneTextFieldNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFieldNib.swift; sourceTree = "<group>"; };
 		354FF69920461F380016EBF1 /* PTNeideSimoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTNeideSimoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		354FF69C20461F380016EBF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		354FF69E20461F380016EBF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		354FF6A120461F380016EBF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		354FF69E20461F380016EBF1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		354FF6A120461F380016EBF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		354FF6A320461F380016EBF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		354FF6A620461F380016EBF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		354FF6A820461F380016EBF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35349EEF204C2C3900DFAEFC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				354FF69E20461F380016EBF1 /* LoginViewController.swift */,
+				35349EF0204C2C9900DFAEFC /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		354FF69020461F380016EBF1 = {
 			isa = PBXGroup;
 			children = (
@@ -62,9 +85,9 @@
 			children = (
 				355488CB204AEA9400E8BC32 /* Controls */,
 				354FF6AE20461F740016EBF1 /* CustomUIButton */,
+				35349EEF204C2C3900DFAEFC /* Controller */,
 				354FF69C20461F380016EBF1 /* AppDelegate.swift */,
-				354FF69E20461F380016EBF1 /* ViewController.swift */,
-				354FF6A020461F380016EBF1 /* Main.storyboard */,
+				354FF6A020461F380016EBF1 /* Login.storyboard */,
 				354FF6A320461F380016EBF1 /* Assets.xcassets */,
 				354FF6A520461F380016EBF1 /* LaunchScreen.storyboard */,
 				354FF6A820461F380016EBF1 /* Info.plist */,
@@ -85,6 +108,12 @@
 			children = (
 				3511F30D204B450D00396C20 /* EmailTextFieldNib.xib */,
 				3511F30B204B337000396C20 /* EmailTextFieldNib.swift */,
+				3513B746204B8B80000068AF /* PasswordTextFieldNib.xib */,
+				3513B748204B8CAA000068AF /* PasswordTextFieldNib.swift */,
+				35349EF6204C323000DFAEFC /* NameTextFieldNib.xib */,
+				35349EF4204C321600DFAEFC /* NameTextFieldNib.swift */,
+				35349EF8204C4F1B00DFAEFC /* PhoneTextFieldNib.xib */,
+				35349EFA204C4F3800DFAEFC /* PhoneTextFieldNib.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -148,10 +177,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35349EF9204C4F1B00DFAEFC /* PhoneTextFieldNib.xib in Resources */,
+				35349EF7204C323000DFAEFC /* NameTextFieldNib.xib in Resources */,
 				3511F30E204B450D00396C20 /* EmailTextFieldNib.xib in Resources */,
 				354FF6A720461F380016EBF1 /* LaunchScreen.storyboard in Resources */,
+				3513B747204B8B80000068AF /* PasswordTextFieldNib.xib in Resources */,
 				354FF6A420461F380016EBF1 /* Assets.xcassets in Resources */,
-				354FF6A220461F380016EBF1 /* Main.storyboard in Resources */,
+				354FF6A220461F380016EBF1 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,8 +195,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3511F30C204B337000396C20 /* EmailTextFieldNib.swift in Sources */,
-				354FF69F20461F380016EBF1 /* ViewController.swift in Sources */,
+				354FF69F20461F380016EBF1 /* LoginViewController.swift in Sources */,
+				35349EF5204C321600DFAEFC /* NameTextFieldNib.swift in Sources */,
+				3513B749204B8CAA000068AF /* PasswordTextFieldNib.swift in Sources */,
+				35349EF1204C2C9900DFAEFC /* RegisterViewController.swift in Sources */,
 				354FF69D20461F380016EBF1 /* AppDelegate.swift in Sources */,
+				35349EFB204C4F3800DFAEFC /* PhoneTextFieldNib.swift in Sources */,
 				354FF6B020461FFB0016EBF1 /* BorderUIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,12 +208,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		354FF6A020461F380016EBF1 /* Main.storyboard */ = {
+		354FF6A020461F380016EBF1 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				354FF6A120461F380016EBF1 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		354FF6A520461F380016EBF1 /* LaunchScreen.storyboard */ = {
