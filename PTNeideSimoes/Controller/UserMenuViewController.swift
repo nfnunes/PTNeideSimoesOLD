@@ -12,7 +12,6 @@ class UserMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.09803921569, blue: 0.1568627451, alpha: 1)
 
         // Do any additional setup after loading the view.
     }

@@ -19,6 +19,7 @@
 		35349F00204CBAE600DFAEFC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35349EFF204CBAE500DFAEFC /* SWRevealViewController.m */; };
 		35349F02204CBBBB00DFAEFC /* UserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35349F01204CBBBB00DFAEFC /* UserMenuViewController.swift */; };
 		35349F04204CBBF300DFAEFC /* UserEntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35349F03204CBBF300DFAEFC /* UserEntranceViewController.swift */; };
+		35349F07204CC11500DFAEFC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35349F06204CC11500DFAEFC /* GradientView.swift */; };
 		354FF69D20461F380016EBF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FF69C20461F380016EBF1 /* AppDelegate.swift */; };
 		354FF69F20461F380016EBF1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FF69E20461F380016EBF1 /* LoginViewController.swift */; };
 		354FF6A220461F380016EBF1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 354FF6A020461F380016EBF1 /* Login.storyboard */; };
@@ -42,6 +43,7 @@
 		35349EFF204CBAE500DFAEFC /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		35349F01204CBBBB00DFAEFC /* UserMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuViewController.swift; sourceTree = "<group>"; };
 		35349F03204CBBF300DFAEFC /* UserEntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntranceViewController.swift; sourceTree = "<group>"; };
+		35349F06204CC11500DFAEFC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		354FF69920461F380016EBF1 /* PTNeideSimoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTNeideSimoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		354FF69C20461F380016EBF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		354FF69E20461F380016EBF1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 			path = SWRevealVC;
 			sourceTree = "<group>";
 		};
+		35349F05204CC0E600DFAEFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				35349F06204CC11500DFAEFC /* GradientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		354FF69020461F380016EBF1 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				35349EFC204CBAC100DFAEFC /* SWRevealVC */,
+				35349F05204CC0E600DFAEFC /* View */,
 				355488CB204AEA9400E8BC32 /* Controls */,
 				354FF6AE20461F740016EBF1 /* CustomUIButton */,
 				35349EEF204C2C3900DFAEFC /* Controller */,
@@ -218,6 +229,7 @@
 			files = (
 				35349F04204CBBF300DFAEFC /* UserEntranceViewController.swift in Sources */,
 				3511F30C204B337000396C20 /* EmailTextFieldNib.swift in Sources */,
+				35349F07204CC11500DFAEFC /* GradientView.swift in Sources */,
 				354FF69F20461F380016EBF1 /* LoginViewController.swift in Sources */,
 				35349EF5204C321600DFAEFC /* NameTextFieldNib.swift in Sources */,
 				3513B749204B8CAA000068AF /* PasswordTextFieldNib.swift in Sources */,
