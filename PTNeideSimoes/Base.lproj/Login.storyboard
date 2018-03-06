@@ -14,6 +14,8 @@
         <array key="Avenir.ttc">
             <string>Avenir-Black</string>
             <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -159,12 +161,90 @@
                     <view key="view" contentMode="scaleToFill" id="qf5-dN-28W" customClass="GradientView" customModule="PTNeideSimoes" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PT Neide Simões" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JX-61-6Lh">
+                                <rect key="frame" x="20" y="22" width="192" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzT-Z4-l1g">
+                                <rect key="frame" x="20" y="607" width="67" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá Neide!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4j-M0-S3d">
+                                <rect key="frame" x="20" y="71" width="108" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UFU-WB-apZ">
+                                <rect key="frame" x="0.0" y="109" width="375" height="490"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="21" minY="0.0" maxX="93" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuOptionCell" rowHeight="44" id="Y6q-XL-Z8I" customClass="menuOptionCell" customModule="PTNeideSimoes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y6q-XL-Z8I" id="Kgp-L7-WS7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9h-7C-FZP">
+                                                    <rect key="frame" x="43" y="8.5" width="49" height="27.5"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                                    <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmN-WS-nTH">
+                                                    <rect key="frame" x="23" y="41.5" width="317" height="2"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="wdv-iH-I4y"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="u9h-7C-FZP" firstAttribute="leading" secondItem="Kgp-L7-WS7" secondAttribute="leading" constant="43" id="4eK-8l-xcH"/>
+                                                <constraint firstItem="zmN-WS-nTH" firstAttribute="leading" secondItem="Kgp-L7-WS7" secondAttribute="leading" constant="23" id="DKU-9d-fOF"/>
+                                                <constraint firstItem="u9h-7C-FZP" firstAttribute="centerY" secondItem="Kgp-L7-WS7" secondAttribute="centerY" id="Q3H-nZ-MNb"/>
+                                                <constraint firstAttribute="trailing" secondItem="zmN-WS-nTH" secondAttribute="trailing" constant="35" id="pxM-Zq-nHn"/>
+                                                <constraint firstAttribute="bottom" secondItem="zmN-WS-nTH" secondAttribute="bottom" id="zgr-NH-5Q1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="menuOptionTitle" destination="u9h-7C-FZP" id="C4e-l5-caJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hzT-Z4-l1g" firstAttribute="leading" secondItem="qf5-dN-28W" secondAttribute="leading" constant="20" id="PP9-ur-9lz"/>
+                            <constraint firstItem="UK1-lu-fYu" firstAttribute="top" secondItem="hzT-Z4-l1g" secondAttribute="bottom" constant="20" id="PyR-lB-tzm"/>
+                            <constraint firstAttribute="trailing" secondItem="UFU-WB-apZ" secondAttribute="trailing" id="V2G-hZ-SQU"/>
+                            <constraint firstItem="7JX-61-6Lh" firstAttribute="top" secondItem="qf5-dN-28W" secondAttribute="top" constant="22" id="cKr-dh-vhC"/>
+                            <constraint firstItem="UFU-WB-apZ" firstAttribute="top" secondItem="G4j-M0-S3d" secondAttribute="bottom" constant="8" id="cuM-Ht-cDa"/>
+                            <constraint firstItem="UFU-WB-apZ" firstAttribute="leading" secondItem="qf5-dN-28W" secondAttribute="leading" id="iUB-6G-XTr"/>
+                            <constraint firstItem="hzT-Z4-l1g" firstAttribute="top" secondItem="UFU-WB-apZ" secondAttribute="bottom" constant="8" id="lqj-ag-6di"/>
+                            <constraint firstItem="G4j-M0-S3d" firstAttribute="leading" secondItem="7JX-61-6Lh" secondAttribute="leading" id="sgG-Zb-LTh"/>
+                            <constraint firstItem="7JX-61-6Lh" firstAttribute="leading" secondItem="qf5-dN-28W" secondAttribute="leading" constant="20" id="uGh-DL-gkB"/>
+                            <constraint firstItem="G4j-M0-S3d" firstAttribute="top" secondItem="7JX-61-6Lh" secondAttribute="bottom" constant="16" id="xAb-01-QOj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="menuOptionsTableView" destination="UFU-WB-apZ" id="HTY-Bd-fRu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKt-47-yJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135" y="735"/>
+            <point key="canvasLocation" x="1133.5999999999999" y="734.48275862068976"/>
         </scene>
         <!--User Entrance View Controller-->
         <scene sceneID="Cbu-9P-pHP">
@@ -178,13 +258,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aU-v6-X8q">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i98-Wp-biS" customClass="GradientView" customModule="PTNeideSimoes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aU-v6-X8q">
+                                        <rect key="frame" x="13" y="26" width="36" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="emm-6B-sJR"/>
+                                            <constraint firstAttribute="width" constant="36" id="jRh-gp-M2t"/>
+                                        </constraints>
+                                        <state key="normal" image="menuBtn"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PT Neide Simões" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9y-xH-c5g">
+                                        <rect key="frame" x="91.5" y="22" width="192" height="33"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                        <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="h9y-xH-c5g" firstAttribute="centerX" secondItem="i98-Wp-biS" secondAttribute="centerX" id="7E3-6O-6Gv"/>
+                                    <constraint firstItem="0aU-v6-X8q" firstAttribute="centerY" secondItem="i98-Wp-biS" secondAttribute="centerY" id="Wjj-7W-HG9"/>
+                                    <constraint firstItem="h9y-xH-c5g" firstAttribute="centerY" secondItem="i98-Wp-biS" secondAttribute="centerY" id="fiu-Ws-Txb"/>
+                                    <constraint firstAttribute="height" constant="77" id="gbe-Az-2au"/>
+                                    <constraint firstItem="0aU-v6-X8q" firstAttribute="leading" secondItem="i98-Wp-biS" secondAttribute="leading" constant="13" id="ovA-lf-rav"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neidelogoFINAL" translatesAutoresizingMaskIntoConstraints="NO" id="zly-yU-A2U">
+                                <rect key="frame" x="19" y="244" width="337.5" height="179"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zly-yU-A2U" firstAttribute="centerX" secondItem="Flz-M1-YNj" secondAttribute="centerX" id="5oe-NM-LBC"/>
+                            <constraint firstItem="zly-yU-A2U" firstAttribute="width" secondItem="Flz-M1-YNj" secondAttribute="width" multiplier="0.9" id="NQn-ad-4ox"/>
+                            <constraint firstItem="zly-yU-A2U" firstAttribute="centerY" secondItem="Flz-M1-YNj" secondAttribute="centerY" id="U2d-Wo-i44"/>
+                            <constraint firstItem="i98-Wp-biS" firstAttribute="leading" secondItem="Flz-M1-YNj" secondAttribute="leading" id="aD1-EH-DKg"/>
+                            <constraint firstAttribute="trailing" secondItem="i98-Wp-biS" secondAttribute="trailing" id="jxJ-AT-5Ct"/>
+                            <constraint firstItem="i98-Wp-biS" firstAttribute="top" secondItem="Flz-M1-YNj" secondAttribute="top" id="xxt-at-ERe"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="menuUIButton" destination="0aU-v6-X8q" id="u3T-2P-7Me"/>
@@ -192,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Amn-CF-H1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="1527"/>
+            <point key="canvasLocation" x="1085.5999999999999" y="1526.9865067466269"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Zba-eV-Eft">
@@ -376,6 +489,7 @@
     </scenes>
     <resources>
         <image name="exitBtn" width="36" height="36"/>
+        <image name="menuBtn" width="36" height="24"/>
         <image name="neidelogoFINAL" width="197" height="179"/>
     </resources>
 </document>

@@ -13,7 +13,7 @@ class UserEntranceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
         
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
         let tap = UITapGestureRecognizer(target: self, action: #selector(UserEntranceViewController.handleTap))

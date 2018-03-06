@@ -26,6 +26,8 @@
 		354FF6A420461F380016EBF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354FF6A320461F380016EBF1 /* Assets.xcassets */; };
 		354FF6A720461F380016EBF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 354FF6A520461F380016EBF1 /* LaunchScreen.storyboard */; };
 		354FF6B020461FFB0016EBF1 /* BorderUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FF6AF20461FFB0016EBF1 /* BorderUIButton.swift */; };
+		35A55AF2204E0AE50007374B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A55AF1204E0AE50007374B /* Constants.swift */; };
+		35A55AF5204E0F880007374B /* menuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A55AF4204E0F880007374B /* menuOptionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		354FF6A620461F380016EBF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		354FF6A820461F380016EBF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		354FF6AF20461FFB0016EBF1 /* BorderUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderUIButton.swift; sourceTree = "<group>"; };
+		35A55AF1204E0AE50007374B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		35A55AF4204E0F880007374B /* menuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuOptionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				35349F06204CC11500DFAEFC /* GradientView.swift */,
+				35A55AF4204E0F880007374B /* menuOptionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,6 +118,8 @@
 		354FF69B20461F380016EBF1 /* PTNeideSimoes */ = {
 			isa = PBXGroup;
 			children = (
+				35A55AF6204E0FF90007374B /* Model */,
+				35A55AF0204E0AD20007374B /* Constants */,
 				35349EFC204CBAC100DFAEFC /* SWRevealVC */,
 				35349F05204CC0E600DFAEFC /* View */,
 				355488CB204AEA9400E8BC32 /* Controls */,
@@ -148,6 +155,21 @@
 				35349EFA204C4F3800DFAEFC /* PhoneTextFieldNib.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		35A55AF0204E0AD20007374B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				35A55AF1204E0AE50007374B /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		35A55AF6204E0FF90007374B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,12 +250,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				35349F04204CBBF300DFAEFC /* UserEntranceViewController.swift in Sources */,
+				35A55AF5204E0F880007374B /* menuOptionCell.swift in Sources */,
 				3511F30C204B337000396C20 /* EmailTextFieldNib.swift in Sources */,
 				35349F07204CC11500DFAEFC /* GradientView.swift in Sources */,
 				354FF69F20461F380016EBF1 /* LoginViewController.swift in Sources */,
 				35349EF5204C321600DFAEFC /* NameTextFieldNib.swift in Sources */,
 				3513B749204B8CAA000068AF /* PasswordTextFieldNib.swift in Sources */,
 				35349F02204CBBBB00DFAEFC /* UserMenuViewController.swift in Sources */,
+				35A55AF2204E0AE50007374B /* Constants.swift in Sources */,
 				35349EF1204C2C9900DFAEFC /* RegisterViewController.swift in Sources */,
 				35349F00204CBAE600DFAEFC /* SWRevealViewController.m in Sources */,
 				354FF69D20461F380016EBF1 /* AppDelegate.swift in Sources */,
