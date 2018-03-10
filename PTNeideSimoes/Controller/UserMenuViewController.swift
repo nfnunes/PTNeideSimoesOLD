@@ -7,22 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class UserMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var menuOptionsTableView: UITableView!
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         menuOptionsTableView.delegate = self
         menuOptionsTableView.dataSource = self
         
-//        let footer = UIView()
-//        footer.alpha = 0
-        
- //       self.menuOptionsTableView.tableFooterView = footer
-
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(UserMenuViewController.setupDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +32,9 @@ class UserMenuViewController: UIViewController, UITableViewDelegate, UITableView
         if let cell = menuOptionsTableView.dequeueReusableCell(withIdentifier: "menuOptionCell", for: indexPath) as? menuOptionCell{
             let option = ptMenuOptionsArray[indexPath.row]
             cell.configureCell(option: option)
+            if indexPath.row == ptMenuOptionsArray.count-1{
+                cell.menuOptionLine.isHidden = true
+            }
             return cell
         } else {
             return UITableViewCell()
@@ -49,4 +49,33 @@ class UserMenuViewController: UIViewController, UITableViewDelegate, UITableView
         return 70
     }
 
+    @IBAction func logoutBtnPressed(_ sender: Any) {
+        AuthService.instance.logoutUser()
+        let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
+        let LoginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        present(LoginViewController, animated: true, completion: nil)
+    }
+    
+    @objc func setupDataDidChange(_ notif: Notification) {
+        setupUserInfo()
+    }
+    
+    func setupUserInfo(){
+        var name = ""
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil{
+                DataService.instance.getCurrentUserName(handler: { (returnedName) in
+                    name = returnedName
+                    self.welcomeLabel.text = "Olá \(name)"
+                })
+                
+                
+            } else {
+                self.welcomeLabel.text = ""
+            }
+        }
+    }
+    
+    
+    
 }

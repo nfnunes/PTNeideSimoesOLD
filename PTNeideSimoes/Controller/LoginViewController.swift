@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var emalTextFieldNib: EmailTextFieldNib!
+    @IBOutlet weak var emailTextFieldNib: EmailTextFieldNib!
     @IBOutlet weak var loginBorderUIButton: BorderUIButton!
+    @IBOutlet weak var passwordTextFieldNib: PasswordTextFieldNib!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,24 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        if emailTextFieldNib.emailTextField.text != nil && passwordTextFieldNib.passwordTextField.text != nil{
+            AuthService.instance.loginUser(withEmail: emailTextFieldNib.emailTextField.text!, andPassword: passwordTextFieldNib.passwordTextField.text!, loginComplete: { (success, loginError) in
+                if success{
+                    
+                    let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
+                    let SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+                    self.present(SWRevealViewController, animated: true, completion: {
+                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                    })
+                } else {
+                    print(loginError)
+                }
+            })
+        }
+    }
+    
 
     @IBAction func registerUIButtonPressed(_ sender: Any) {
         

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
 
@@ -35,15 +36,6 @@ class RegisterViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func souPTUISwitchChanged(_ sender: Any) {
         if (souPTUISwitch.isOn){
             codigoPTUITextField.isHidden = false
@@ -56,6 +48,38 @@ class RegisterViewController: UIViewController {
     
     @IBAction func exitUIButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func registerBtnPressed(_ sender: Any) {
+
+        guard let email = self.emailTextFieldNib.emailTextField?.text else { return }
+        guard let password = self.passwordTextFieldNib.passwordTextField?.text else { return }
+        guard let name = self.nameTextFieldNib.nameTextField?.text, name != ""  else { return }
+        guard let surname = self.surnameTextFieldNib.nameTextField?.text, surname != ""  else { return }
+        guard let phone = self.mobiletextFieldNib.phoneTextField?.text else { return }
+        
+        AuthService.instance.registerUser(withName: name,
+                                          andSurname: surname,
+                                          andPhone: phone,
+                                          andEmail: email,
+                                          andPassword: password,
+                                          andIsPT: souPTUISwitch.isOn,
+                                          userCreationComplete: { (success, registrationError) in
+                                            if success{
+                                                
+                                                AuthService.instance.loginUser(withEmail: self.emailTextFieldNib.emailTextField.text!, andPassword: self.passwordTextFieldNib.passwordTextField.text!, loginComplete: { (success, nil) in
+                                                    let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
+                                                    let SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+                                                    self.present(SWRevealViewController, animated: true, completion: {
+                                                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                                                    })
+
+                                                })
+                                            } else {
+                                                print(registrationError)
+                                            }
+        })
+        
     }
     
 }

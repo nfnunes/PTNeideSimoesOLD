@@ -11,6 +11,8 @@ import UIKit
 class menuOptionCell: UITableViewCell {
 
     @IBOutlet weak var menuOptionTitle: UILabel!
+    
+    @IBOutlet weak var menuOptionLine: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

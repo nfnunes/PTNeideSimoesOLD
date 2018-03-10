@@ -9,3 +9,8 @@
 import Foundation
 
 let ptMenuOptionsArray = ["Alunos", "Planos de treino"]
+
+
+//Notification
+
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")

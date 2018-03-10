@@ -44,5 +44,7 @@ class UserEntranceViewController: UIViewController {
     @objc func handleTap(){
         view.endEditing(true)
     }
+    
 
+    
 }
