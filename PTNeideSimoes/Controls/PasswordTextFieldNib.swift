@@ -16,6 +16,8 @@ class PasswordTextFieldNib: UIControl {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var requiredLabel: UILabel!
     @IBOutlet weak var shortLabel: UILabel!
+    @IBOutlet weak var differentPasswords: UILabel!
+    @IBOutlet weak var wrongCode: UILabel!
     
     var contentView: UIView?
     //@IBInspectable var nibName: String?
@@ -58,22 +60,11 @@ class PasswordTextFieldNib: UIControl {
     
     @IBAction func userPressedTextField(_ sender: Any) {
         requiredLabel.isHidden = true
+        differentPasswords.isHidden = true
+        shortLabel.isHidden = true
     }
     
-    @IBAction func userEndEditing(_ sender: Any) {
-        guard let text = passwordTextField?.text, text != "" else {
-            requiredLabel.isHidden = false
-            return
-        }
-        if !text.isEmpty {
-            requiredLabel.isHidden = true
-            if text.count < 6 {
-                shortLabel.isHidden = false
-            } else {
-                shortLabel.isHidden = true
-            }
-        }
-    }
+
 
 
 }

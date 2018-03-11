@@ -54,14 +54,20 @@ class RegisterViewController: UIViewController {
 
         guard let email = self.emailTextFieldNib.emailTextField?.text, email != "",
             let password = self.passwordTextFieldNib.passwordTextField?.text, password != "",
+            let confirmPassword = self.confirmPasswordTextFieldNib.passwordTextField?.text, password != "",
             let name = self.nameTextFieldNib.nameTextField?.text, name != "",
             let surname = self.surnameTextFieldNib.nameTextField?.text, surname != ""
             else  {
                 if self.emailTextFieldNib.emailTextField?.text == ""{
                     self.emailTextFieldNib.requiredLabel.isHidden = false
+                    self.emailTextFieldNib.invalidEmailLabel.isHidden = true
+                    self.emailTextFieldNib.usedEmailLabel.isHidden = true
                 }
                 if self.passwordTextFieldNib.passwordTextField?.text == ""{
                     self.passwordTextFieldNib.requiredLabel.isHidden = false
+                }
+                if self.confirmPasswordTextFieldNib.passwordTextField?.text == "" {
+                    self.confirmPasswordTextFieldNib.requiredLabel.isHidden = false
                 }
                 if self.nameTextFieldNib.nameTextField?.text == ""{
                     self.nameTextFieldNib.requiredLabel.isHidden = false
@@ -72,49 +78,77 @@ class RegisterViewController: UIViewController {
                 return
             }
         
-
-    
         guard let phone = self.mobiletextFieldNib.phoneTextField?.text else { return }
         
-//        AuthService.instance.registerUser(withName: name,
-//                                          andSurname: surname,
-//                                          andPhone: phone,
-//                                          andEmail: email,
-//                                          andPassword: password,
-//                                          andIsPT: souPTUISwitch.isOn,
-//                                          userCreationComplete: { (success, registrationError) in
-//                                            if success{
-//
-//                                                AuthService.instance.loginUser(withEmail: self.emailTextFieldNib.emailTextField.text!, andPassword: self.passwordTextFieldNib.passwordTextField.text!, loginComplete: { (success, nil) in
-//                                                    let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
-//                                                    let SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
-//                                                    self.present(SWRevealViewController, animated: true, completion: {
-//                                                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-//                                                    })
-//
-//                                                })
-//                                            } else {
-//                                                print(registrationError)
-//                                            }
-//        })
-        
-        
-        
-        
-        print(Auth.auth().currentUser?.uid)
-        
-        //DataService.instance.checkEmailExists(email: email)
-        
-//        AuthService.instance.registerUser(withName: name,
-//                                          andSurname: surname,
-//                                          andPhone: phone,
-//                                          andEmail: email,
-//                                          andPassword: password, andIsPT: souPTUISwitch.isOn) { (success, registrationError) in
-//                                            if success{
-//                                                self.dismiss(animated: true, completion: nil)
-//                                            }
-//        }
-        
+        if souPTUISwitch.isOn{
+            if let codigo = self.codigoPTUITextField.passwordTextField.text{
+                if codigo == codigoPT{
+                    codigoPTUITextField.wrongCode.isHidden = true
+                    registar(name: name, surname: surname, phone: phone, email: email, password: password, confirmPassword: confirmPassword)
+                }
+                else{
+                    codigoPTUITextField.wrongCode.isHidden = false
+                }
+            }
+            if codigoPTUITextField.passwordTextField.text == ""{
+                codigoPTUITextField.wrongCode.isHidden = true
+                codigoPTUITextField.requiredLabel.isHidden = false
+            }
+        } else {
+            registar(name: name, surname: surname, phone: phone, email: email, password: password, confirmPassword: confirmPassword)
+        }
     }
+
+    
+    func registar(name: String, surname: String, phone: String, email: String, password: String, confirmPassword: String){
+        if password == confirmPassword{
+            confirmPasswordTextFieldNib.differentPasswords.isHidden = true
+            AuthService.instance.registerUser(withName: name,
+                                              andSurname: surname,
+                                              andPhone: phone,
+                                              andEmail: email,
+                                              andPassword: password,
+                                              andIsPT: souPTUISwitch.isOn,
+                                              userCreationComplete: { (success, registrationError) in
+                                                if success{
+                                                    
+                                                    AuthService.instance.loginUser(withEmail: self.emailTextFieldNib.emailTextField.text!, andPassword: self.passwordTextFieldNib.passwordTextField.text!, loginComplete: { (success, nil) in
+                                                        let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
+                                                        let SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+                                                        self.present(SWRevealViewController, animated: true, completion: {
+                                                            NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                                                        })
+                                                        
+                                                    })
+                                                } else {
+                                                    if let errorCode = AuthErrorCode(rawValue: registrationError!._code){
+                                                        switch errorCode{
+                                                        case .invalidEmail:
+                                                            self.emailTextFieldNib.requiredLabel.isHidden = true
+                                                            self.emailTextFieldNib.invalidEmailLabel.isHidden = false
+                                                            self.emailTextFieldNib.usedEmailLabel.isHidden = true
+                                                        case .emailAlreadyInUse:
+                                                            self.emailTextFieldNib.requiredLabel.isHidden = true
+                                                            self.emailTextFieldNib.usedEmailLabel.isHidden = false
+                                                            self.emailTextFieldNib.invalidEmailLabel.isHidden = true
+                                                        case .weakPassword:
+                                                            self.passwordTextFieldNib.shortLabel.isHidden = false
+                                                        default: print(registrationError)
+                                                        }
+                                                    }
+                                                }
+            })
+        } else {
+            if confirmPassword == ""{
+                confirmPasswordTextFieldNib.requiredLabel.isHidden = false
+                confirmPasswordTextFieldNib.differentPasswords.isHidden = true
+            } else {
+                confirmPasswordTextFieldNib.requiredLabel.isHidden = true
+                confirmPasswordTextFieldNib.differentPasswords.isHidden = false
+            }
+        }
+    }
+    
+    
     
 }

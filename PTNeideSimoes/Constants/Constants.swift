@@ -8,7 +8,15 @@
 
 import Foundation
 
+// Menu PT
 let ptMenuOptionsArray = ["Alunos", "Planos de treino"]
+
+//Codigo PT
+let codigoPT = "#ptNeideSimoesAPP#"
+
+// Menu Aluno
+
+
 
 
 //Notification

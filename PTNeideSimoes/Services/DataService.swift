@@ -38,22 +38,6 @@ class DataService {
         }
     }
     
-    func checkEmailExists (email: String) -> Bool{
-        var emails = [String]()
-        REF_USERS.observeSingleEvent(of: DataEventType.value) { (snapshot) in
-            let enumerator = snapshot.children
-            while let rest = enumerator.nextObject() as? DataSnapshot{
-                emails.append(rest.childSnapshot(forPath: "email").value as! String)
-            }
-        }
-        if emails.contains(email){
-            return true
-        }
-        else {
-            return false
-        }
-    }
-    
 
     
 }

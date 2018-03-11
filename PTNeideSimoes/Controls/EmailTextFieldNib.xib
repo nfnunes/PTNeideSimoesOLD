@@ -21,7 +21,9 @@
             <connections>
                 <outlet property="emailTextField" destination="Vww-kF-3NN" id="Sbo-jW-7BX"/>
                 <outlet property="emailTextFieldNib" destination="iN0-l3-epB" id="cwF-zT-Fdn"/>
+                <outlet property="invalidEmailLabel" destination="ClG-9c-ETl" id="7Nr-PT-ZGs"/>
                 <outlet property="requiredLabel" destination="9Cq-Kv-P31" id="Aq2-Cq-Fx3"/>
+                <outlet property="usedEmailLabel" destination="U4c-Ji-03v" id="DNr-uK-8AR"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -56,13 +58,29 @@
                     <color key="textColor" red="0.87843137250000003" green="0.098039215690000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Inválido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-9c-ETl">
+                    <rect key="frame" x="302.5" y="24" width="72.5" height="16"/>
+                    <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="11"/>
+                    <color key="textColor" red="0.87843137250000003" green="0.098039215690000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Este email já está a ser utilizado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4c-Ji-03v">
+                    <rect key="frame" x="208" y="24" width="167" height="16"/>
+                    <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="11"/>
+                    <color key="textColor" red="0.87843137250000003" green="0.098039215690000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="9Cq-Kv-P31" firstAttribute="centerY" secondItem="Vww-kF-3NN" secondAttribute="top" id="7Zu-CO-4cE"/>
+                <constraint firstItem="U4c-Ji-03v" firstAttribute="trailing" secondItem="t8B-Ux-cNf" secondAttribute="trailing" id="7sr-4N-Vcu"/>
                 <constraint firstItem="t8B-Ux-cNf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BL3-7l-AKX"/>
+                <constraint firstItem="ClG-9c-ETl" firstAttribute="centerY" secondItem="Vww-kF-3NN" secondAttribute="top" id="LXp-P7-b6P"/>
                 <constraint firstItem="9Cq-Kv-P31" firstAttribute="trailing" secondItem="t8B-Ux-cNf" secondAttribute="trailing" id="OiX-BG-oFB"/>
+                <constraint firstItem="ClG-9c-ETl" firstAttribute="trailing" secondItem="t8B-Ux-cNf" secondAttribute="trailing" id="U8K-Uh-Bmc"/>
                 <constraint firstItem="Vww-kF-3NN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="U9s-gn-sBC"/>
+                <constraint firstItem="U4c-Ji-03v" firstAttribute="centerY" secondItem="Vww-kF-3NN" secondAttribute="top" id="dnG-zG-jOd"/>
                 <constraint firstItem="t8B-Ux-cNf" firstAttribute="top" secondItem="Vww-kF-3NN" secondAttribute="bottom" id="fBg-zd-vz1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Vww-kF-3NN" secondAttribute="trailing" constant="10" id="rhO-FO-cIk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="t8B-Ux-cNf" secondAttribute="trailing" id="sgs-Ji-CBu"/>

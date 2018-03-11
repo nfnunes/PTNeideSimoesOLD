@@ -15,6 +15,10 @@ class EmailTextFieldNib: UIControl {
     @IBOutlet var emailTextFieldNib: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var requiredLabel: UILabel!
+    @IBOutlet weak var invalidEmailLabel: UILabel!
+    @IBOutlet weak var usedEmailLabel: UILabel!
+    
+    
     
     var contentView: UIView?
     //@IBInspectable var nibName: String?

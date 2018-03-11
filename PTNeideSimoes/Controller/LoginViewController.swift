@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
+        passwordTextFieldNib.shortLabel.isHidden = true
         if emailTextFieldNib.emailTextField.text != nil && passwordTextFieldNib.passwordTextField.text != nil{
             AuthService.instance.loginUser(withEmail: emailTextFieldNib.emailTextField.text!, andPassword: passwordTextFieldNib.passwordTextField.text!, loginComplete: { (success, loginError) in
                 if success{
