@@ -14,6 +14,7 @@ class EmailTextFieldNib: UIControl {
     
     @IBOutlet var emailTextFieldNib: UIView!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var requiredLabel: UILabel!
     
     var contentView: UIView?
     //@IBInspectable var nibName: String?
@@ -56,6 +57,20 @@ class EmailTextFieldNib: UIControl {
     
     func isValidEmail(email: String) -> Bool{
         return false
+    }
+    
+    @IBAction func userPressedTextField(_ sender: Any) {
+        requiredLabel.isHidden = true
+    }
+    
+    @IBAction func userEndEditing(_ sender: Any) {
+        guard let text = emailTextField?.text, text != "" else {
+            requiredLabel.isHidden = false
+            return
+        }
+        if !text.isEmpty{
+            requiredLabel.isHidden = true
+        }
     }
     
 

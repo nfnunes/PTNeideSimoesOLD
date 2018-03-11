@@ -38,14 +38,22 @@ class DataService {
         }
     }
     
-//    func getCurrentUserName()->String{
-//
-//        let userID = Auth.auth().currentUser?.uid
-//        let name = REF_USERS.child(userID!).observeSingleEvent(of: .value) { (snapshot) in
-//            let value = snapshot.value as? NSDictionary
-//            let name = value? ["name"] as? String ?? ""
-//        }
-//        return name
-//    }
+    func checkEmailExists (email: String) -> Bool{
+        var emails = [String]()
+        REF_USERS.observeSingleEvent(of: DataEventType.value) { (snapshot) in
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot{
+                emails.append(rest.childSnapshot(forPath: "email").value as! String)
+            }
+        }
+        if emails.contains(email){
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+
     
 }

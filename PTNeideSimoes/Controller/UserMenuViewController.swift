@@ -14,6 +14,8 @@ class UserMenuViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var menuOptionsTableView: UITableView!
     @IBOutlet weak var welcomeLabel: UILabel!
     
+    var currentUser: String = Auth.auth().currentUser!.uid
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         menuOptionsTableView.delegate = self

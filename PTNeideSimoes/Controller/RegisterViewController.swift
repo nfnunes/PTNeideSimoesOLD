@@ -52,33 +52,68 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerBtnPressed(_ sender: Any) {
 
-        guard let email = self.emailTextFieldNib.emailTextField?.text else { return }
-        guard let password = self.passwordTextFieldNib.passwordTextField?.text else { return }
-        guard let name = self.nameTextFieldNib.nameTextField?.text, name != ""  else { return }
-        guard let surname = self.surnameTextFieldNib.nameTextField?.text, surname != ""  else { return }
+        guard let email = self.emailTextFieldNib.emailTextField?.text, email != "",
+            let password = self.passwordTextFieldNib.passwordTextField?.text, password != "",
+            let name = self.nameTextFieldNib.nameTextField?.text, name != "",
+            let surname = self.surnameTextFieldNib.nameTextField?.text, surname != ""
+            else  {
+                if self.emailTextFieldNib.emailTextField?.text == ""{
+                    self.emailTextFieldNib.requiredLabel.isHidden = false
+                }
+                if self.passwordTextFieldNib.passwordTextField?.text == ""{
+                    self.passwordTextFieldNib.requiredLabel.isHidden = false
+                }
+                if self.nameTextFieldNib.nameTextField?.text == ""{
+                    self.nameTextFieldNib.requiredLabel.isHidden = false
+                }
+                if self.surnameTextFieldNib.nameTextField?.text == ""{
+                    self.surnameTextFieldNib.requiredLabel.isHidden = false
+                }
+                return
+            }
+        
+
+    
         guard let phone = self.mobiletextFieldNib.phoneTextField?.text else { return }
         
-        AuthService.instance.registerUser(withName: name,
-                                          andSurname: surname,
-                                          andPhone: phone,
-                                          andEmail: email,
-                                          andPassword: password,
-                                          andIsPT: souPTUISwitch.isOn,
-                                          userCreationComplete: { (success, registrationError) in
-                                            if success{
-                                                
-                                                AuthService.instance.loginUser(withEmail: self.emailTextFieldNib.emailTextField.text!, andPassword: self.passwordTextFieldNib.passwordTextField.text!, loginComplete: { (success, nil) in
-                                                    let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
-                                                    let SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
-                                                    self.present(SWRevealViewController, animated: true, completion: {
-                                                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-                                                    })
-
-                                                })
-                                            } else {
-                                                print(registrationError)
-                                            }
-        })
+//        AuthService.instance.registerUser(withName: name,
+//                                          andSurname: surname,
+//                                          andPhone: phone,
+//                                          andEmail: email,
+//                                          andPassword: password,
+//                                          andIsPT: souPTUISwitch.isOn,
+//                                          userCreationComplete: { (success, registrationError) in
+//                                            if success{
+//
+//                                                AuthService.instance.loginUser(withEmail: self.emailTextFieldNib.emailTextField.text!, andPassword: self.passwordTextFieldNib.passwordTextField.text!, loginComplete: { (success, nil) in
+//                                                    let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
+//                                                    let SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+//                                                    self.present(SWRevealViewController, animated: true, completion: {
+//                                                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+//                                                    })
+//
+//                                                })
+//                                            } else {
+//                                                print(registrationError)
+//                                            }
+//        })
+        
+        
+        
+        
+        print(Auth.auth().currentUser?.uid)
+        
+        //DataService.instance.checkEmailExists(email: email)
+        
+//        AuthService.instance.registerUser(withName: name,
+//                                          andSurname: surname,
+//                                          andPhone: phone,
+//                                          andEmail: email,
+//                                          andPassword: password, andIsPT: souPTUISwitch.isOn) { (success, registrationError) in
+//                                            if success{
+//                                                self.dismiss(animated: true, completion: nil)
+//                                            }
+//        }
         
     }
     

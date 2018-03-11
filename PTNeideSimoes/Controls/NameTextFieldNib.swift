@@ -14,6 +14,7 @@ class NameTextFieldNib: UIControl {
 
     @IBOutlet var nameTextFieldNib: UIView!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var requiredLabel: UILabel!
     
     var contentView: UIView?
     //@IBInspectable var nibName: String?
@@ -54,18 +55,22 @@ class NameTextFieldNib: UIControl {
         contentView?.prepareForInterfaceBuilder()
     }
     
-//    public override var placeholder: String? {
-//        didSet {
-//            let placeholderStr = placeholder ?? ""
-//            attributedPlaceholder = NSAttributedString(string: placeholderStr, attributes: [NSForegroundColorAttributeName: placeholderColor])
-//        }
-//    }
-//
-//    @IBInspectable public var placeholderColor: UIColor = .red {
-//        didSet {
-//            let placeholderStr = placeholder ?? ""
-//            attributedPlaceholder = NSAttributedString(string: placeholderStr, attributes: [NSForegroundColorAttributeName: placeholderColor])
-//        }
-//    }
+    @IBAction func userPressedTextField(_ sender: Any) {
+        requiredLabel.isHidden = true
+    }
+    
+    
+    
+    @IBAction func userEndEditing(_ sender: Any) {
+        guard let text = nameTextField?.text, text != "" else {
+            requiredLabel.isHidden = false
+            return
+        }
+        if !text.isEmpty{
+            requiredLabel.isHidden = true
+        }
+    }
+    
+
 
 }
