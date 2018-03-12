@@ -24,6 +24,7 @@
                 <outlet property="invalidEmailLabel" destination="ClG-9c-ETl" id="7Nr-PT-ZGs"/>
                 <outlet property="requiredLabel" destination="9Cq-Kv-P31" id="Aq2-Cq-Fx3"/>
                 <outlet property="usedEmailLabel" destination="U4c-Ji-03v" id="DNr-uK-8AR"/>
+                <outlet property="userNotRegistered" destination="oDV-GO-zGS" id="r6G-gD-CpE"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -70,6 +71,12 @@
                     <color key="textColor" red="0.87843137250000003" green="0.098039215690000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utilizador não registado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDV-GO-zGS">
+                    <rect key="frame" x="249" y="24" width="126" height="16"/>
+                    <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="11"/>
+                    <color key="textColor" red="0.87843137250000003" green="0.098039215690000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -80,8 +87,10 @@
                 <constraint firstItem="9Cq-Kv-P31" firstAttribute="trailing" secondItem="t8B-Ux-cNf" secondAttribute="trailing" id="OiX-BG-oFB"/>
                 <constraint firstItem="ClG-9c-ETl" firstAttribute="trailing" secondItem="t8B-Ux-cNf" secondAttribute="trailing" id="U8K-Uh-Bmc"/>
                 <constraint firstItem="Vww-kF-3NN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="U9s-gn-sBC"/>
+                <constraint firstItem="oDV-GO-zGS" firstAttribute="trailing" secondItem="t8B-Ux-cNf" secondAttribute="trailing" id="XSY-So-zoH"/>
                 <constraint firstItem="U4c-Ji-03v" firstAttribute="centerY" secondItem="Vww-kF-3NN" secondAttribute="top" id="dnG-zG-jOd"/>
                 <constraint firstItem="t8B-Ux-cNf" firstAttribute="top" secondItem="Vww-kF-3NN" secondAttribute="bottom" id="fBg-zd-vz1"/>
+                <constraint firstItem="oDV-GO-zGS" firstAttribute="centerY" secondItem="Vww-kF-3NN" secondAttribute="top" id="g80-w2-Zjb"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Vww-kF-3NN" secondAttribute="trailing" constant="10" id="rhO-FO-cIk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="t8B-Ux-cNf" secondAttribute="trailing" id="sgs-Ji-CBu"/>
                 <constraint firstItem="Vww-kF-3NN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="urC-SY-cCx"/>

@@ -10,13 +10,14 @@ import UIKit
 
 @IBDesignable
 
-class EmailTextFieldNib: UIControl {
+class EmailTextFieldNib: UIControl{
     
     @IBOutlet var emailTextFieldNib: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var requiredLabel: UILabel!
     @IBOutlet weak var invalidEmailLabel: UILabel!
     @IBOutlet weak var usedEmailLabel: UILabel!
+    @IBOutlet weak var userNotRegistered: UILabel!
     
     
     
@@ -65,6 +66,7 @@ class EmailTextFieldNib: UIControl {
     
     @IBAction func userPressedTextField(_ sender: Any) {
         requiredLabel.isHidden = true
+        userNotRegistered.isHidden = true
     }
     
     @IBAction func userEndEditing(_ sender: Any) {
@@ -76,6 +78,7 @@ class EmailTextFieldNib: UIControl {
             requiredLabel.isHidden = true
         }
     }
+    
     
 
 

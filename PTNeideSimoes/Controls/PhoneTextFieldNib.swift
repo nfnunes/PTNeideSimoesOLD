@@ -14,6 +14,7 @@ class PhoneTextFieldNib: UIControl {
 
     @IBOutlet var phoneTextFieldNib: UIView!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var invalidMobile: UILabel!
     
     var contentView: UIView?
     //@IBInspectable var nibName: String?
@@ -53,5 +54,24 @@ class PhoneTextFieldNib: UIControl {
         xibSetup()
         contentView?.prepareForInterfaceBuilder()
     }
-
+    
+    func validateMobilePhone(value: String) -> Bool {
+        let PHONE_REGEX = "^9\\d{8}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES[c] %@", PHONE_REGEX)
+        let result =  phoneTest.evaluate(with: value)
+        return result
+    }
+    @IBAction func verifyPhone(_ sender: Any) {
+        guard let phone = phoneTextField?.text, phone != "" else { return }
+        if (!validateMobilePhone(value: phone)){
+            invalidMobile.isHidden = false
+        }
+    }
+    
+    @IBAction func userPressedMobile(_ sender: Any) {
+        invalidMobile.isHidden = true
+        phoneTextField.becomeFirstResponder()
+    }
+    
+    
 }

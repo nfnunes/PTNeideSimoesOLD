@@ -57,6 +57,7 @@ class NameTextFieldNib: UIControl {
     
     @IBAction func userPressedTextField(_ sender: Any) {
         requiredLabel.isHidden = true
+        nameTextField.becomeFirstResponder()
     }
     
     

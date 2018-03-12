@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextFieldNib: NameTextFieldNib!
     @IBOutlet weak var surnameTextFieldNib: NameTextFieldNib!
@@ -113,12 +113,30 @@ class RegisterViewController: UIViewController {
                                                 if success{
                                                     
                                                     AuthService.instance.loginUser(withEmail: self.emailTextFieldNib.emailTextField.text!, andPassword: self.passwordTextFieldNib.passwordTextField.text!, loginComplete: { (success, nil) in
-                                                        let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
-                                                        let SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
-                                                        self.present(SWRevealViewController, animated: true, completion: {
-                                                            NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-                                                        })
                                                         
+                                                        if Auth.auth().currentUser?.isEmailVerified == false {
+                                                            Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
+                                                                
+                                                                if error == nil{
+                                                                    let alert  = UIAlertController(title: "Aviso", message: "Verifique o seu email para ativar a conta", preferredStyle: .alert)
+                                                                    
+                                                                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action:UIAlertAction) in
+                                                                        let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
+                                                                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                                                                        self.present(loginViewController, animated: true, completion: nil)
+                                                                    }))
+                                                                    self.present(alert, animated: true, completion: nil)
+                                                                    
+                                                                    ////
+//                                                                    let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
+//                                                                    let SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+//                                                                    self.present(SWRevealViewController, animated: true, completion: {
+//                                                                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+//                                                                    })
+                                                                    /////
+                                                                }
+                                                            })
+                                                        }
                                                     })
                                                 } else {
                                                     if let errorCode = AuthErrorCode(rawValue: registrationError!._code){

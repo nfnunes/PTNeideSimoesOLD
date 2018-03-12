@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController{
     
     @IBOutlet weak var emailTextFieldNib: EmailTextFieldNib!
     @IBOutlet weak var loginBorderUIButton: BorderUIButton!
@@ -32,14 +32,32 @@ class LoginViewController: UIViewController {
         if emailTextFieldNib.emailTextField.text != nil && passwordTextFieldNib.passwordTextField.text != nil{
             AuthService.instance.loginUser(withEmail: emailTextFieldNib.emailTextField.text!, andPassword: passwordTextFieldNib.passwordTextField.text!, loginComplete: { (success, loginError) in
                 if success{
-                    
-                    let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
-                    let SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
-                    self.present(SWRevealViewController, animated: true, completion: {
-                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-                    })
+                    if Auth.auth().currentUser!.isEmailVerified{
+                        let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
+                        let SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+                        self.present(SWRevealViewController, animated: true, completion: {
+                            NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                        })
+                    } else {
+                        let alert  = UIAlertController(title: "Aviso", message: "Verifique o seu email para ativar a conta", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        alert.addAction(UIAlertAction(title: "Reenviar", style: .default, handler: { (action:UIAlertAction) in
+                            Auth.auth().currentUser?.sendEmailVerification(completion: nil)
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
                 } else {
-                    print(loginError)
+                    if let errorCode = AuthErrorCode(rawValue: loginError!._code){
+                        switch errorCode{
+                        case .userNotFound:
+                            self.emailTextFieldNib.userNotRegistered.isHidden = false
+                            self.passwordTextFieldNib.wrongPassword.isHidden = true
+                        case .wrongPassword:
+                            self.passwordTextFieldNib.wrongPassword.isHidden = false
+                            self.emailTextFieldNib.userNotRegistered.isHidden = true
+                        default: print(loginError)
+                        }
+                    }
                 }
             })
         }
@@ -53,5 +71,7 @@ class LoginViewController: UIViewController {
         }
         
     }
+
+    
 }
 
