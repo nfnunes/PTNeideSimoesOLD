@@ -26,6 +26,7 @@ class EmailTextFieldNib: UIControl{
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         xibSetup()
     }
     
@@ -78,7 +79,6 @@ class EmailTextFieldNib: UIControl{
             requiredLabel.isHidden = true
         }
     }
-    
     
 
 

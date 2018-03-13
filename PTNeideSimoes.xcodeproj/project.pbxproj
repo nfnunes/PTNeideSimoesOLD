@@ -140,6 +140,7 @@
 		354FF69B20461F380016EBF1 /* PTNeideSimoes */ = {
 			isa = PBXGroup;
 			children = (
+				359015FF205758FE009D9409 /* TPKeyboardAvoiding */,
 				3536C16D2051CBD800059873 /* Services */,
 				35A55AF6204E0FF90007374B /* Model */,
 				35A55AF0204E0AD20007374B /* Constants */,
@@ -179,6 +180,13 @@
 				35349EFA204C4F3800DFAEFC /* PhoneTextFieldNib.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		359015FF205758FE009D9409 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		35A55AF0204E0AD20007374B /* Constants */ = {
@@ -314,6 +322,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PTNeideSimoes/Pods-PTNeideSimoes-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -321,6 +330,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);

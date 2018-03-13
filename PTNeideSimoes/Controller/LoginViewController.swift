@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController{
+class LoginViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var emailTextFieldNib: EmailTextFieldNib!
     @IBOutlet weak var loginBorderUIButton: BorderUIButton!
@@ -17,15 +17,16 @@ class LoginViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.emailTextFieldNib.emailTextField.delegate = self
+        self.passwordTextFieldNib.passwordTextField.delegate = self
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
         view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         passwordTextFieldNib.shortLabel.isHidden = true
@@ -70,6 +71,17 @@ class LoginViewController: UIViewController{
             present(vc, animated: true, completion: nil)
         }
         
+    }
+    
+    @objc func dismissKeyboard() {
+        emailTextFieldNib.emailTextField.endEditing(true)
+        passwordTextFieldNib.passwordTextField.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextFieldNib.emailTextField.endEditing(true)
+        passwordTextFieldNib.passwordTextField.endEditing(true)
+        return false
     }
 
     

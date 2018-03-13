@@ -21,18 +21,25 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var codigoPTUITextField: PasswordTextFieldNib!
     @IBOutlet weak var codigoPTSpaceUIView: UIView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        self.emailTextFieldNib.emailTextField.delegate = self
+        self.passwordTextFieldNib.passwordTextField.delegate = self
+        self.nameTextFieldNib.nameTextField.delegate = self
+        self.surnameTextFieldNib.nameTextField.delegate = self
+        self.mobiletextFieldNib.phoneTextField.delegate = self
+        self.confirmPasswordTextFieldNib.passwordTextField.delegate = self
+        self.codigoPTUITextField.passwordTextField.delegate = self
+        
         surnameTextFieldNib.nameTextField.placeholder = "Apelido"
         confirmPasswordTextFieldNib.passwordTextField.placeholder = "Confirmar Password"
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
 
@@ -165,6 +172,27 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 confirmPasswordTextFieldNib.differentPasswords.isHidden = false
             }
         }
+    }
+    
+    @objc func dismissKeyboard() {
+        emailTextFieldNib.emailTextField.endEditing(true)
+        passwordTextFieldNib.passwordTextField.endEditing(true)
+        nameTextFieldNib.nameTextField.endEditing(true)
+        surnameTextFieldNib.nameTextField.endEditing(true)
+        mobiletextFieldNib.phoneTextField.endEditing(true)
+        confirmPasswordTextFieldNib.passwordTextField.endEditing(true)
+        codigoPTUITextField.passwordTextField.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextFieldNib.emailTextField.endEditing(true)
+        passwordTextFieldNib.passwordTextField.endEditing(true)
+        nameTextFieldNib.nameTextField.endEditing(true)
+        surnameTextFieldNib.nameTextField.endEditing(true)
+        mobiletextFieldNib.phoneTextField.endEditing(true)
+        confirmPasswordTextFieldNib.passwordTextField.endEditing(true)
+        codigoPTUITextField.passwordTextField.endEditing(true)
+        return false
     }
     
     
